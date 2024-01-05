@@ -1,8 +1,6 @@
-import json
 import unittest
 
 from slack_sdk.scim import SearchUsersResponse, SCIMResponse
-from slack_sdk.scim.v1.internal_utils import _to_snake_cased
 
 
 class TEstInternals(unittest.TestCase):

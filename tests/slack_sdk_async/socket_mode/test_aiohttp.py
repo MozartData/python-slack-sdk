@@ -1,4 +1,3 @@
-import asyncio
 import unittest
 
 from slack_sdk.socket_mode.aiohttp import SocketModeClient
@@ -55,7 +54,7 @@ class TestAiohttp(unittest.TestCase):
         )
         try:
             await client.connect_to_new_endpoint()
-        except Exception as e:
+        except Exception:
             # TODO: valida test to connect
             pass
         finally:

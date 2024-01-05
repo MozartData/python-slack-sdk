@@ -1,5 +1,4 @@
 from typing import Optional
-from aiohttp import ServerDisconnectedError, ClientOSError
 
 from slack_sdk.http_retry.async_handler import AsyncRetryHandler
 from slack_sdk.http_retry.interval_calculator import RetryIntervalCalculator

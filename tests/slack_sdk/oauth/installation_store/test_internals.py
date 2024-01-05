@@ -4,7 +4,6 @@ from datetime import datetime, timezone
 
 import pytest
 
-from slack_sdk.oauth.installation_store import Installation, FileInstallationStore
 from slack_sdk.oauth.installation_store.internals import _from_iso_format_to_datetime, _timestamp_to_type
 
 

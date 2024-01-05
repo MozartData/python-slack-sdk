@@ -1,9 +1,8 @@
 import json
 import unittest
 from io import BytesIO
-from typing import Dict, Sequence, Union
+from typing import Dict
 
-import pytest
 
 from slack_sdk.models.attachments import Attachment
 from slack_sdk.models.blocks import Block, DividerBlock

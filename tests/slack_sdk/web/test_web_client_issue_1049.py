@@ -1,4 +1,3 @@
-import json
 import unittest
 
 from slack_sdk.web import WebClient

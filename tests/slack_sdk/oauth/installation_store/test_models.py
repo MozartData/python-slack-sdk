@@ -1,7 +1,7 @@
 import time
 import unittest
 
-from slack_sdk.oauth.installation_store import Installation, FileInstallationStore, Bot
+from slack_sdk.oauth.installation_store import Installation, Bot
 
 
 class TestModels(unittest.TestCase):

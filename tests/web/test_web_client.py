@@ -1,5 +1,4 @@
 import asyncio
-import gc
 import io
 import re
 import socket
