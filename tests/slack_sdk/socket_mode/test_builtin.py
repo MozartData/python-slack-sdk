@@ -17,7 +17,6 @@ from slack_sdk.socket_mode.builtin.internals import (
     _parse_connect_response,
     _use_or_create_ssl_context,
 )
-from slack_sdk.web.legacy_client import LegacyWebClient
 from .mock_web_api_server import (
     setup_mock_web_api_server,
     cleanup_mock_web_api_server,
@@ -49,18 +48,6 @@ class TestBuiltin(unittest.TestCase):
             self.assertIsNone(client.session_id())  # not yet connected
         finally:
             client.close()
-
-    def test_issue_new_wss_url(self):
-        client = SocketModeClient(
-            app_token="xapp-A111-222-xyz",
-            web_client=self.web_client,
-        )
-        url = client.issue_new_wss_url()
-        self.assertTrue(url.startswith("wss://"))
-
-        legacy_client = LegacyWebClient(token="xoxb-api_test", base_url="http://localhost:8888")
-        response = legacy_client.apps_connections_open(app_token="xapp-A111-222-xyz")
-        self.assertIsNotNone(response["url"])
 
     def test_connect_to_new_endpoint(self):
         client = SocketModeClient(

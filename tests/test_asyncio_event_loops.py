@@ -4,7 +4,7 @@ import asyncio
 
 import pytest
 
-from slack import WebClient, RTMClient
+from slack import WebClient
 
 
 class TestAsyncioEventLoops(unittest.TestCase):
@@ -45,11 +45,4 @@ class TestAsyncioEventLoops(unittest.TestCase):
         clients = []
         for i in range(num):
             clients.append(WebClient(token="xoxb-test", run_async=False))
-        self.assertEqual(len(clients), num)
-
-    def test_rtm_client_never_generate_huge_number_of_event_loops(self):
-        num = 1000
-        clients = []
-        for i in range(num):
-            clients.append(RTMClient(token="xoxb-test", run_async=False))
         self.assertEqual(len(clients), num)

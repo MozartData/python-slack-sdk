@@ -396,18 +396,6 @@ def _upload_file_via_v2_url(
     return {"status": resp.status, "headers": resp.headers, "body": body}
 
 
-def _validate_for_legacy_client(
-    response: Union["SlackResponse", Future],  # noqa: F821
-) -> None:  # type: ignore
-    # Only LegacyWebClient can return this union type
-    if isinstance(response, Future):
-        message = (
-            "Sorry! This SDK does not support run_async=True option for this API calls. "
-            "Please migrate to AsyncWebClient, which is a new and stable way to go."
-        )
-        raise SlackRequestError(message)
-
-
 def _print_files_upload_v2_suggestion():
     message = (
         "client.files_upload() may cause some issues like timeouts for relatively large files. "

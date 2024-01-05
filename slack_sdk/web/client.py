@@ -15,7 +15,6 @@ from .internal_utils import (
     _remove_none_values,
     _to_v2_file_upload_item,
     _upload_file_via_v2_url,
-    _validate_for_legacy_client,
     _print_files_upload_v2_suggestion,
 )
 from ..models.attachments import Attachment
@@ -3569,7 +3568,6 @@ class WebClient(BaseClient):
                 snippet_type=f.get("snippet_type"),
                 token=kwargs.get("token"),
             )
-            _validate_for_legacy_client(url_response)
             f["file_id"] = url_response.get("file_id")  # type: ignore
             f["upload_url"] = url_response.get("upload_url")  # type: ignore
 
